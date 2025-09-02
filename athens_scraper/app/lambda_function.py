@@ -25,24 +25,24 @@ logging.basicConfig(
     stream=sys.stdout
 )
 
-# config for production
-config = read_config()
-DB_NAME     = config.get("DB_NAME")
-DB_PORT     = config.get("DB_PORT")
-DB_HOST     = config.get("DB_HOST")
-DB_PASSWORD = config.get("DB_PASSWORD")
-DB_USER     = config.get("DB_USER")
-bucket_name = config.get("BucketName", "")
+# # config for production
+# config = read_config()
+# DB_NAME     = config.get("DB_NAME")
+# DB_PORT     = config.get("DB_PORT")
+# DB_HOST     = config.get("DB_HOST")
+# DB_PASSWORD = config.get("DB_PASSWORD")
+# DB_USER     = config.get("DB_USER")
+# bucket_name = config.get("BucketName", "")
 
-# Environment variables for database connection for local development
-# from dotenv import load_dotenv
-# load_dotenv()
-# DB_USER     = os.getenv("DB_USER")
-# DB_PASSWORD = os.getenv("DB_PASSWORD")
-# DB_HOST     = os.getenv("DB_HOST")
-# DB_PORT     = os.getenv("DB_PORT")
-# DB_NAME     = os.getenv("DB_NAME")
-# bucket_name = os.getenv("BucketName")
+#Environment variables for database connection for local development
+from dotenv import load_dotenv
+load_dotenv()
+DB_USER     = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST     = os.getenv("DB_HOST")
+DB_PORT     = os.getenv("DB_PORT")
+DB_NAME     = os.getenv("DB_NAME")
+bucket_name = os.getenv("BucketName")
 
 
 def save_eventData_to_db(response_body: str) -> None:
