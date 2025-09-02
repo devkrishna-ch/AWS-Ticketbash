@@ -1,0 +1,11 @@
+selenium
+requests
+curl_cffi
+sqlalchemy
+thefuzz
+pymysql
+webdriver-manager
+2captcha-python
+bs4
+lxml
+beautifulsoup4
